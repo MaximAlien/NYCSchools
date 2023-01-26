@@ -13,7 +13,21 @@
 		6DC7665D2980D3CC0088171A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7665B2980D3CC0088171A /* Main.storyboard */; };
 		6DC7665F2980D3D10088171A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7665E2980D3D10088171A /* Assets.xcassets */; };
 		6DC766622980D3D10088171A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC766602980D3D10088171A /* LaunchScreen.storyboard */; };
-		6DC7666D2980D3D20088171A /* NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7666C2980D3D20088171A /* NYCSchoolsTests.swift */; };
+		6DC7668B2980D6320088171A /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7668A2980D6320088171A /* School.swift */; };
+		6DC7668D2980D64B0088171A /* SchoolResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7668C2980D64B0088171A /* SchoolResults.swift */; };
+		6DC7668F2980DB6D0088171A /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7668E2980DB6D0088171A /* Dispatcher.swift */; };
+		6DC766912980DB960088171A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766902980DB960088171A /* Endpoint.swift */; };
+		6DC766942980E7F60088171A /* OpenDataEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766932980E7F60088171A /* OpenDataEndpoint.swift */; };
+		6DC766982980E84C0088171A /* OpenDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766972980E84C0088171A /* OpenDataService.swift */; };
+		6DC7669A2980E8760088171A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766992980E8760088171A /* Service.swift */; };
+		6DC7669D2980EF960088171A /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7669C2980EF960088171A /* URLSession.swift */; };
+		6DC7669F2980F07F0088171A /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7669E2980F07E0088171A /* OSLog.swift */; };
+		6DC766A12980F0BF0088171A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766A02980F0BF0088171A /* UIColor.swift */; };
+		6DC766A42980F0F40088171A /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766A32980F0F40088171A /* Appearance.swift */; };
+		6DC766A62980F6690088171A /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766A52980F6680088171A /* ServiceTests.swift */; };
+		6DC766A82980FE000088171A /* Schools.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DC766A72980FE000088171A /* Schools.json */; };
+		6DC766AA2980FE190088171A /* SchoolResults.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DC766A92980FE190088171A /* SchoolResults.json */; };
+		6DC766AC298100140088171A /* DecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766AB298100140088171A /* DecoderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +50,21 @@
 		6DC766612980D3D10088171A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DC766632980D3D10088171A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DC766682980D3D20088171A /* NYCSchoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYCSchoolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DC7666C2980D3D20088171A /* NYCSchoolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolsTests.swift; sourceTree = "<group>"; };
+		6DC7668A2980D6320088171A /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		6DC7668C2980D64B0088171A /* SchoolResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolResults.swift; sourceTree = "<group>"; };
+		6DC7668E2980DB6D0088171A /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		6DC766902980DB960088171A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		6DC766932980E7F60088171A /* OpenDataEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDataEndpoint.swift; sourceTree = "<group>"; };
+		6DC766972980E84C0088171A /* OpenDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenDataService.swift; sourceTree = "<group>"; };
+		6DC766992980E8760088171A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		6DC7669C2980EF960088171A /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		6DC7669E2980F07E0088171A /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
+		6DC766A02980F0BF0088171A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		6DC766A32980F0F40088171A /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		6DC766A52980F6680088171A /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		6DC766A72980FE000088171A /* Schools.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Schools.json; sourceTree = "<group>"; };
+		6DC766A92980FE190088171A /* SchoolResults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SchoolResults.json; sourceTree = "<group>"; };
+		6DC766AB298100140088171A /* DecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +106,15 @@
 		6DC766542980D3CC0088171A /* NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				6DC766A22980F0CC0088171A /* Appearance */,
+				6DC7669B2980EF7F0088171A /* Extensions */,
+				6DC766892980D58A0088171A /* Views */,
+				6DC766882980D57B0088171A /* ViewModels */,
+				6DC766872980D5670088171A /* ViewControllers */,
+				6DC766862980D5560088171A /* Models */,
+				6DC766852980D54D0088171A /* Networking */,
 				6DC766552980D3CC0088171A /* AppDelegate.swift */,
 				6DC766572980D3CC0088171A /* SceneDelegate.swift */,
-				6DC766592980D3CC0088171A /* ViewController.swift */,
 				6DC7665B2980D3CC0088171A /* Main.storyboard */,
 				6DC7665E2980D3D10088171A /* Assets.xcassets */,
 				6DC766602980D3D10088171A /* LaunchScreen.storyboard */,
@@ -92,9 +126,81 @@
 		6DC7666B2980D3D20088171A /* NYCSchoolsTests */ = {
 			isa = PBXGroup;
 			children = (
-				6DC7666C2980D3D20088171A /* NYCSchoolsTests.swift */,
+				6DC766A52980F6680088171A /* ServiceTests.swift */,
+				6DC766AB298100140088171A /* DecoderTests.swift */,
+				6DC766A72980FE000088171A /* Schools.json */,
+				6DC766A92980FE190088171A /* SchoolResults.json */,
 			);
 			path = NYCSchoolsTests;
+			sourceTree = "<group>";
+		};
+		6DC766852980D54D0088171A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6DC766922980E7AD0088171A /* NYCOpenData */,
+				6DC766992980E8760088171A /* Service.swift */,
+				6DC766902980DB960088171A /* Endpoint.swift */,
+				6DC7668E2980DB6D0088171A /* Dispatcher.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6DC766862980D5560088171A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6DC7668A2980D6320088171A /* School.swift */,
+				6DC7668C2980D64B0088171A /* SchoolResults.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6DC766872980D5670088171A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6DC766592980D3CC0088171A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6DC766882980D57B0088171A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DC766892980D58A0088171A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DC766922980E7AD0088171A /* NYCOpenData */ = {
+			isa = PBXGroup;
+			children = (
+				6DC766932980E7F60088171A /* OpenDataEndpoint.swift */,
+				6DC766972980E84C0088171A /* OpenDataService.swift */,
+			);
+			path = NYCOpenData;
+			sourceTree = "<group>";
+		};
+		6DC7669B2980EF7F0088171A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6DC7669C2980EF960088171A /* URLSession.swift */,
+				6DC7669E2980F07E0088171A /* OSLog.swift */,
+				6DC766A02980F0BF0088171A /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6DC766A22980F0CC0088171A /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				6DC766A32980F0F40088171A /* Appearance.swift */,
+			);
+			path = Appearance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +294,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC766AA2980FE190088171A /* SchoolResults.json in Resources */,
+				6DC766A82980FE000088171A /* Schools.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,9 +306,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC766912980DB960088171A /* Endpoint.swift in Sources */,
+				6DC766A12980F0BF0088171A /* UIColor.swift in Sources */,
+				6DC7669D2980EF960088171A /* URLSession.swift in Sources */,
+				6DC766982980E84C0088171A /* OpenDataService.swift in Sources */,
 				6DC7665A2980D3CC0088171A /* ViewController.swift in Sources */,
+				6DC766942980E7F60088171A /* OpenDataEndpoint.swift in Sources */,
 				6DC766562980D3CC0088171A /* AppDelegate.swift in Sources */,
+				6DC7668F2980DB6D0088171A /* Dispatcher.swift in Sources */,
+				6DC7668D2980D64B0088171A /* SchoolResults.swift in Sources */,
+				6DC766A42980F0F40088171A /* Appearance.swift in Sources */,
+				6DC7669A2980E8760088171A /* Service.swift in Sources */,
+				6DC7669F2980F07F0088171A /* OSLog.swift in Sources */,
 				6DC766582980D3CC0088171A /* SceneDelegate.swift in Sources */,
+				6DC7668B2980D6320088171A /* School.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DC7666D2980D3D20088171A /* NYCSchoolsTests.swift in Sources */,
+				6DC766AC298100140088171A /* DecoderTests.swift in Sources */,
+				6DC766A62980F6690088171A /* ServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
