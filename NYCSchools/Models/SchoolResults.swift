@@ -15,19 +15,19 @@ struct SchoolResults: Decodable {
     var districtBoroughNumber: String
     
     /// Name of the school.
-    var name: String
+    var name: String?
     
     /// Number of the SAT test takers.
-    var numberOfTestTakers: UInt64
+    var numberOfTestTakers: UInt64?
     
     /// SAT critical reading average score.
-    var criticalReadingAverageScore: UInt64
+    var criticalReadingAverageScore: UInt64?
     
     /// SAT mathematics average score.
-    var mathematicsAverageScore: UInt64
+    var mathematicsAverageScore: UInt64?
     
     /// SAT mathematics average score.
-    var writingAverageScore: UInt64
+    var writingAverageScore: UInt64?
     
     enum CodingKeys: String, CodingKey {
         
@@ -42,18 +42,22 @@ struct SchoolResults: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         districtBoroughNumber = try container.decode(String.self, forKey: .districtBoroughNumber)
-        name = try container.decode(String.self, forKey: .name)
+        name = try container.decodeIfPresent(String.self, forKey: .name)
         
-        let numberOfTestTakersAsString = try container.decode(String.self, forKey: .numberOfTestTakers)
-        numberOfTestTakers = UInt64(numberOfTestTakersAsString) ?? 0
+        if let numberOfTestTakersAsString = try container.decodeIfPresent(String.self, forKey: .numberOfTestTakers) {
+            numberOfTestTakers = UInt64(numberOfTestTakersAsString) ?? 0
+        }
         
-        let criticalReadingAverageScoreAsString = try container.decode(String.self, forKey: .criticalReeadingAverageScore)
-        criticalReadingAverageScore = UInt64(criticalReadingAverageScoreAsString) ?? 0
+        if let criticalReadingAverageScoreAsString = try container.decodeIfPresent(String.self, forKey: .criticalReeadingAverageScore) {
+            criticalReadingAverageScore = UInt64(criticalReadingAverageScoreAsString) ?? 0
+        }
         
-        let mathematicsAverageScoreAsString = try container.decode(String.self, forKey: .mathematicsAverageScore)
-        mathematicsAverageScore = UInt64(mathematicsAverageScoreAsString) ?? 0
+        if let mathematicsAverageScoreAsString = try container.decodeIfPresent(String.self, forKey: .mathematicsAverageScore) {
+            mathematicsAverageScore = UInt64(mathematicsAverageScoreAsString) ?? 0
+        }
         
-        let writingAverageScoreAsString = try container.decode(String.self, forKey: .writingAverageScore)
-        writingAverageScore = UInt64(writingAverageScoreAsString) ?? 0
+        if let writingAverageScoreAsString = try container.decodeIfPresent(String.self, forKey: .writingAverageScore) {
+            writingAverageScore = UInt64(writingAverageScoreAsString) ?? 0
+        }
     }
 }

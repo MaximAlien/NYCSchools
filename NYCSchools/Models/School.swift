@@ -11,21 +11,30 @@ import CoreLocation
 /// School that contains information about 
 struct School: Decodable {
     
+    /// Combination of the district number, the letter code for the borough,
+    /// and the number of the school.
     var districtBoroughNumber: String
     
-    var name: String
+    /// Name of the school.
+    var name: String?
     
-    var overview: String
+    /// Overview of the school.
+    var overview: String?
     
-    var address: String
+    /// Address of the school (including street, borough, zip code and location).
+    var address: String?
     
-    var phoneNumber: String
+    /// Phone number of the school.
+    var phoneNumber: String?
     
-    var email: String
+    /// Email of the school.
+    var email: String?
     
-    var website: URL
+    /// Website of the school.
+    var website: URL?
     
-    var location: CLLocation
+    /// Location of the school.
+    var location: CLLocation?
     
     enum CodingKeys: String, CodingKey {
         
@@ -43,17 +52,18 @@ struct School: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         districtBoroughNumber = try container.decode(String.self, forKey: .districtBoroughNumber)
-        name = try container.decode(String.self, forKey: .name)
+        name = try container.decodeIfPresent(String.self, forKey: .name)
+        overview = try container.decodeIfPresent(String.self, forKey: .overview)
+        address = try container.decodeIfPresent(String.self, forKey: .address)
+        phoneNumber = try container.decodeIfPresent(String.self, forKey: .phoneNumber)
+        email = try container.decodeIfPresent(String.self, forKey: .email)
+        website = try container.decodeIfPresent(URL.self, forKey: .website)
         
-        overview = try container.decode(String.self, forKey: .overview)
-        address = try container.decode(String.self, forKey: .address)
-        phoneNumber = try container.decode(String.self, forKey: .phoneNumber)
-        email = try container.decode(String.self, forKey: .email)
-        website = try container.decode(URL.self, forKey: .website)
-        
-        let latitude = try container.decode(String.self, forKey: .latitude)
-        let longitude = try container.decode(String.self, forKey: .longitude)
-        
-        location = CLLocation(latitude: CLLocationDegrees(latitude)!, longitude: CLLocationDegrees(longitude)!)
+        if let latitude = try container.decodeIfPresent(String.self, forKey: .latitude),
+           let longitude = try container.decodeIfPresent(String.self, forKey: .longitude),
+           let latitude = CLLocationDegrees(latitude),
+           let longitude = CLLocationDegrees(longitude) {
+            location = CLLocation(latitude: latitude, longitude: longitude)
+        }
     }
 }
