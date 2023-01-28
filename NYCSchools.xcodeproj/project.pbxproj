@@ -7,10 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D3B36932984764F0055975B /* SchoolEmailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B36922984764F0055975B /* SchoolEmailLabel.swift */; };
+		6D3B3695298476650055975B /* SchoolWebsiteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B3694298476650055975B /* SchoolWebsiteLabel.swift */; };
+		6D3B36972984A5A10055975B /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B36962984A5A00055975B /* MapViewModel.swift */; };
+		6D3B36992984AB560055975B /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B36982984AB560055975B /* Cache.swift */; };
+		6D3B369B2984AE880055975B /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B369A2984AE880055975B /* CacheTests.swift */; };
+		6D3B369D2984B4B10055975B /* SchoolsViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B369C2984B4B10055975B /* SchoolsViewModelDelegate.swift */; };
+		6D90121C29831E5C006765A2 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90121A29831E5C006765A2 /* SchoolTableViewCell.swift */; };
+		6D90121D29831E5C006765A2 /* SchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D90121B29831E5C006765A2 /* SchoolTableViewCell.xib */; };
+		6D90121F29831E70006765A2 /* SchoolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90121E29831E70006765A2 /* SchoolsViewModel.swift */; };
+		6D90122229831E9F006765A2 /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90122029831E9F006765A2 /* SchoolsViewController.swift */; };
+		6D90122629831EC7006765A2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90122429831EC7006765A2 /* TabBarController.swift */; };
+		6D90122A29831EE8006765A2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90122829831EE8006765A2 /* MapViewController.swift */; };
+		6D90123C298347D1006765A2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D901238298347CF006765A2 /* UIImageView.swift */; };
+		6D90123D298347D1006765A2 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D901239298347D0006765A2 /* UITableView.swift */; };
+		6D90123E298347D1006765A2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90123A298347D0006765A2 /* String.swift */; };
+		6D90123F298347D1006765A2 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90123B298347D0006765A2 /* UITableViewCell.swift */; };
+		6D9012422983482C006765A2 /* CellBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9012402983482C006765A2 /* CellBackgroundView.swift */; };
+		6D9012432983482C006765A2 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9012412983482C006765A2 /* BackgroundView.swift */; };
+		6D90124529835864006765A2 /* SchoolNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90124429835864006765A2 /* SchoolNameLabel.swift */; };
+		6D9012472983900B006765A2 /* SchoolAddressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9012462983900A006765A2 /* SchoolAddressLabel.swift */; };
 		6DC766562980D3CC0088171A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766552980D3CC0088171A /* AppDelegate.swift */; };
 		6DC766582980D3CC0088171A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766572980D3CC0088171A /* SceneDelegate.swift */; };
-		6DC7665A2980D3CC0088171A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC766592980D3CC0088171A /* ViewController.swift */; };
-		6DC7665D2980D3CC0088171A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7665B2980D3CC0088171A /* Main.storyboard */; };
 		6DC7665F2980D3D10088171A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DC7665E2980D3D10088171A /* Assets.xcassets */; };
 		6DC766622980D3D10088171A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DC766602980D3D10088171A /* LaunchScreen.storyboard */; };
 		6DC7668B2980D6320088171A /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7668A2980D6320088171A /* School.swift */; };
@@ -41,11 +59,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D3B36922984764F0055975B /* SchoolEmailLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolEmailLabel.swift; sourceTree = "<group>"; };
+		6D3B3694298476650055975B /* SchoolWebsiteLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolWebsiteLabel.swift; sourceTree = "<group>"; };
+		6D3B36962984A5A00055975B /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		6D3B36982984AB560055975B /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		6D3B369A2984AE880055975B /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
+		6D3B369C2984B4B10055975B /* SchoolsViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewModelDelegate.swift; sourceTree = "<group>"; };
+		6D90121A29831E5C006765A2 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
+		6D90121B29831E5C006765A2 /* SchoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolTableViewCell.xib; sourceTree = "<group>"; };
+		6D90121E29831E70006765A2 /* SchoolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewModel.swift; sourceTree = "<group>"; };
+		6D90122029831E9F006765A2 /* SchoolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewController.swift; sourceTree = "<group>"; };
+		6D90122429831EC7006765A2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		6D90122829831EE8006765A2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6D901238298347CF006765A2 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		6D901239298347D0006765A2 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		6D90123A298347D0006765A2 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		6D90123B298347D0006765A2 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		6D9012402983482C006765A2 /* CellBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBackgroundView.swift; sourceTree = "<group>"; };
+		6D9012412983482C006765A2 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		6D90124429835864006765A2 /* SchoolNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolNameLabel.swift; sourceTree = "<group>"; };
+		6D9012462983900A006765A2 /* SchoolAddressLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolAddressLabel.swift; sourceTree = "<group>"; };
 		6DC766522980D3CC0088171A /* NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYCSchools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC766552980D3CC0088171A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DC766572980D3CC0088171A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6DC766592980D3CC0088171A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6DC7665C2980D3CC0088171A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DC7665E2980D3D10088171A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DC766612980D3D10088171A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DC766632980D3D10088171A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,7 +151,6 @@
 				6DC766852980D54D0088171A /* Networking */,
 				6DC766552980D3CC0088171A /* AppDelegate.swift */,
 				6DC766572980D3CC0088171A /* SceneDelegate.swift */,
-				6DC7665B2980D3CC0088171A /* Main.storyboard */,
 				6DC7665E2980D3D10088171A /* Assets.xcassets */,
 				6DC766602980D3D10088171A /* LaunchScreen.storyboard */,
 				6DC766632980D3D10088171A /* Info.plist */,
@@ -128,6 +163,7 @@
 			children = (
 				6DC766A52980F6680088171A /* ServiceTests.swift */,
 				6DC766AB298100140088171A /* DecoderTests.swift */,
+				6D3B369A2984AE880055975B /* CacheTests.swift */,
 				6DC766A72980FE000088171A /* Schools.json */,
 				6DC766A92980FE190088171A /* SchoolResults.json */,
 			);
@@ -141,6 +177,7 @@
 				6DC766992980E8760088171A /* Service.swift */,
 				6DC766902980DB960088171A /* Endpoint.swift */,
 				6DC7668E2980DB6D0088171A /* Dispatcher.swift */,
+				6D3B36982984AB560055975B /* Cache.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -157,7 +194,9 @@
 		6DC766872980D5670088171A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6DC766592980D3CC0088171A /* ViewController.swift */,
+				6D90122429831EC7006765A2 /* TabBarController.swift */,
+				6D90122029831E9F006765A2 /* SchoolsViewController.swift */,
+				6D90122829831EE8006765A2 /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -165,6 +204,9 @@
 		6DC766882980D57B0088171A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				6D90121E29831E70006765A2 /* SchoolsViewModel.swift */,
+				6D3B369C2984B4B10055975B /* SchoolsViewModelDelegate.swift */,
+				6D3B36962984A5A00055975B /* MapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -172,6 +214,14 @@
 		6DC766892980D58A0088171A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6D9012412983482C006765A2 /* BackgroundView.swift */,
+				6D9012402983482C006765A2 /* CellBackgroundView.swift */,
+				6D90121A29831E5C006765A2 /* SchoolTableViewCell.swift */,
+				6D90121B29831E5C006765A2 /* SchoolTableViewCell.xib */,
+				6D90124429835864006765A2 /* SchoolNameLabel.swift */,
+				6D9012462983900A006765A2 /* SchoolAddressLabel.swift */,
+				6D3B36922984764F0055975B /* SchoolEmailLabel.swift */,
+				6D3B3694298476650055975B /* SchoolWebsiteLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +238,10 @@
 		6DC7669B2980EF7F0088171A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6D90123A298347D0006765A2 /* String.swift */,
+				6D901238298347CF006765A2 /* UIImageView.swift */,
+				6D901239298347D0006765A2 /* UITableView.swift */,
+				6D90123B298347D0006765A2 /* UITableViewCell.swift */,
 				6DC7669C2980EF960088171A /* URLSession.swift */,
 				6DC7669E2980F07E0088171A /* OSLog.swift */,
 				6DC766A02980F0BF0088171A /* UIColor.swift */,
@@ -286,7 +340,7 @@
 			files = (
 				6DC766622980D3D10088171A /* LaunchScreen.storyboard in Resources */,
 				6DC7665F2980D3D10088171A /* Assets.xcassets in Resources */,
-				6DC7665D2980D3CC0088171A /* Main.storyboard in Resources */,
+				6D90121D29831E5C006765A2 /* SchoolTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,18 +360,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D90122229831E9F006765A2 /* SchoolsViewController.swift in Sources */,
 				6DC766912980DB960088171A /* Endpoint.swift in Sources */,
 				6DC766A12980F0BF0088171A /* UIColor.swift in Sources */,
 				6DC7669D2980EF960088171A /* URLSession.swift in Sources */,
 				6DC766982980E84C0088171A /* OpenDataService.swift in Sources */,
-				6DC7665A2980D3CC0088171A /* ViewController.swift in Sources */,
+				6D90123F298347D1006765A2 /* UITableViewCell.swift in Sources */,
 				6DC766942980E7F60088171A /* OpenDataEndpoint.swift in Sources */,
+				6D90122629831EC7006765A2 /* TabBarController.swift in Sources */,
 				6DC766562980D3CC0088171A /* AppDelegate.swift in Sources */,
+				6D3B36932984764F0055975B /* SchoolEmailLabel.swift in Sources */,
 				6DC7668F2980DB6D0088171A /* Dispatcher.swift in Sources */,
+				6D90121F29831E70006765A2 /* SchoolsViewModel.swift in Sources */,
+				6D9012472983900B006765A2 /* SchoolAddressLabel.swift in Sources */,
 				6DC7668D2980D64B0088171A /* SchoolResults.swift in Sources */,
+				6D3B3695298476650055975B /* SchoolWebsiteLabel.swift in Sources */,
 				6DC766A42980F0F40088171A /* Appearance.swift in Sources */,
+				6D3B36992984AB560055975B /* Cache.swift in Sources */,
+				6D90123C298347D1006765A2 /* UIImageView.swift in Sources */,
+				6D3B36972984A5A10055975B /* MapViewModel.swift in Sources */,
+				6D90121C29831E5C006765A2 /* SchoolTableViewCell.swift in Sources */,
+				6D90124529835864006765A2 /* SchoolNameLabel.swift in Sources */,
+				6D90122A29831EE8006765A2 /* MapViewController.swift in Sources */,
 				6DC7669A2980E8760088171A /* Service.swift in Sources */,
+				6D3B369D2984B4B10055975B /* SchoolsViewModelDelegate.swift in Sources */,
+				6D9012422983482C006765A2 /* CellBackgroundView.swift in Sources */,
+				6D9012432983482C006765A2 /* BackgroundView.swift in Sources */,
 				6DC7669F2980F07F0088171A /* OSLog.swift in Sources */,
+				6D90123D298347D1006765A2 /* UITableView.swift in Sources */,
+				6D90123E298347D1006765A2 /* String.swift in Sources */,
 				6DC766582980D3CC0088171A /* SceneDelegate.swift in Sources */,
 				6DC7668B2980D6320088171A /* School.swift in Sources */,
 			);
@@ -329,6 +400,7 @@
 			files = (
 				6DC766AC298100140088171A /* DecoderTests.swift in Sources */,
 				6DC766A62980F6690088171A /* ServiceTests.swift in Sources */,
+				6D3B369B2984AE880055975B /* CacheTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,14 +415,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6DC7665B2980D3CC0088171A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6DC7665C2980D3CC0088171A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6DC766602980D3D10088171A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -490,7 +554,6 @@
 				INFOPLIST_FILE = NYCSchools/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -502,7 +565,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -518,7 +581,6 @@
 				INFOPLIST_FILE = NYCSchools/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -530,7 +592,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
