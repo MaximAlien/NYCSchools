@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import MapKit
 
 /// School that contains information about 
 struct School: Decodable {
@@ -65,5 +66,24 @@ struct School: Decodable {
            let longitude = CLLocationDegrees(longitude) {
             location = CLLocation(latitude: latitude, longitude: longitude)
         }
+    }
+}
+
+// MARK: - School extension
+
+extension School {
+    
+    /// Point annotation that contains school representation (location and name of the school).
+    var annotation: MKPointAnnotation? {
+        guard let coordinate = location?.coordinate else {
+            return nil
+        }
+        
+        let annotation = MKPointAnnotation()
+        annotation.title = name
+        annotation.coordinate = CLLocationCoordinate2D(latitude: coordinate.latitude,
+                                                       longitude: coordinate.longitude)
+        
+        return annotation
     }
 }
