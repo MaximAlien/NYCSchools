@@ -60,11 +60,11 @@ class ServiceMock: Service {
 class ServiceTests: XCTestCase {
     
     override func setUpWithError() throws {
-        
+        // No-op
     }
     
     override func tearDownWithError() throws {
-        
+        // No-op
     }
     
     func testService() {

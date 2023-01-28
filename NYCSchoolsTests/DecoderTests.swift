@@ -12,11 +12,11 @@ import CoreLocation
 class DecoderTests: XCTestCase {
     
     override func setUpWithError() throws {
-        
+        // No-op
     }
     
     override func tearDownWithError() throws {
-        
+        // No-op
     }
     
     func testSchoolsDecoding() {
@@ -35,8 +35,8 @@ class DecoderTests: XCTestCase {
         XCTAssertEqual(schools[0].website, URL(string: "www.theclintonschool.net")!)
         
         let expectedLocation = CLLocation(latitude: 40.73653000, longitude: -73.99270000)
-        XCTAssertEqual(schools[0].location.coordinate.latitude, expectedLocation.coordinate.latitude)
-        XCTAssertEqual(schools[0].location.coordinate.longitude, expectedLocation.coordinate.longitude)
+        XCTAssertEqual(schools[0].location?.coordinate.latitude, expectedLocation.coordinate.latitude)
+        XCTAssertEqual(schools[0].location?.coordinate.longitude, expectedLocation.coordinate.longitude)
     }
     
     func testSchoolsResultsDecoding() {
