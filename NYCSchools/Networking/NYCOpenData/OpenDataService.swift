@@ -25,7 +25,7 @@ struct OpenDataService: Service {
     }
     
     func schoolResults(_ districtBoroughNumber: String,
-                       completion: @escaping (Result<SchoolResults, Error>) -> Void) {
+                       completion: @escaping (Result<[SchoolResults], Error>) -> Void) {
         let endpoint = OpenDataEndpoint.schoolResults(districtBoroughNumber)
         
         return dispatchable.execute(endpoint,
