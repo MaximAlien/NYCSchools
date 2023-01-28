@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="SchoolTableViewCell" customModule="NYCSchools" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GD0-Xg-k25" customClass="CellBackgroundView" customModule="NYCSchools" customModuleProvider="target">
+                        <rect key="frame" x="10" y="5" width="300" height="110"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6xd-pj-QgY">
+                                <rect key="frame" x="10" y="10" width="80" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="2T3-7l-lxX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEf-L5-xDD" customClass="SchoolNameLabel" customModule="NYCSchools" customModuleProvider="target">
+                                <rect key="frame" x="100" y="10" width="190" height="20"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="uUk-Ez-awQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIL-Xq-efN" customClass="SchoolAddressLabel" customModule="NYCSchools" customModuleProvider="target">
+                                <rect key="frame" x="100" y="30" width="190" height="20"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="pgv-kE-qKN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcE-5X-jcJ" customClass="SchoolEmailLabel" customModule="NYCSchools" customModuleProvider="target">
+                                <rect key="frame" x="100" y="50" width="190" height="20"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ZLy-Or-ciM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLQ-h3-C7S" customClass="SchoolWebsiteLabel" customModule="NYCSchools" customModuleProvider="target">
+                                <rect key="frame" x="100" y="70" width="190" height="20"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="C57-UW-AqU"/>
+                                    <constraint firstAttribute="height" constant="20" id="EVm-Ai-F0d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nIL-Xq-efN" secondAttribute="trailing" constant="10" id="1uD-PY-8Ns"/>
+                            <constraint firstItem="nIL-Xq-efN" firstAttribute="top" secondItem="MEf-L5-xDD" secondAttribute="bottom" id="341-PB-r6n"/>
+                            <constraint firstItem="tcE-5X-jcJ" firstAttribute="leading" secondItem="6xd-pj-QgY" secondAttribute="trailing" constant="10" id="BQX-uo-bPx"/>
+                            <constraint firstItem="nIL-Xq-efN" firstAttribute="leading" secondItem="6xd-pj-QgY" secondAttribute="trailing" constant="10" id="FW8-ix-ibc"/>
+                            <constraint firstAttribute="trailing" secondItem="tcE-5X-jcJ" secondAttribute="trailing" constant="10" id="HSo-7c-7Gh"/>
+                            <constraint firstItem="6xd-pj-QgY" firstAttribute="top" secondItem="GD0-Xg-k25" secondAttribute="top" constant="10" id="ISo-uz-LZJ"/>
+                            <constraint firstAttribute="bottom" secondItem="6xd-pj-QgY" secondAttribute="bottom" constant="10" id="Jad-Xf-nut"/>
+                            <constraint firstItem="6xd-pj-QgY" firstAttribute="leading" secondItem="GD0-Xg-k25" secondAttribute="leading" constant="10" id="Pkx-eq-5ZJ"/>
+                            <constraint firstItem="MEf-L5-xDD" firstAttribute="leading" secondItem="6xd-pj-QgY" secondAttribute="trailing" constant="10" id="QkD-Wu-NdX"/>
+                            <constraint firstItem="oLQ-h3-C7S" firstAttribute="top" secondItem="tcE-5X-jcJ" secondAttribute="bottom" id="V2X-Jn-bH2"/>
+                            <constraint firstAttribute="trailing" secondItem="MEf-L5-xDD" secondAttribute="trailing" constant="10" id="dN7-kC-m6W"/>
+                            <constraint firstItem="tcE-5X-jcJ" firstAttribute="top" secondItem="nIL-Xq-efN" secondAttribute="bottom" id="qvm-T2-rBN"/>
+                            <constraint firstItem="oLQ-h3-C7S" firstAttribute="leading" secondItem="6xd-pj-QgY" secondAttribute="trailing" constant="10" id="syr-kn-Rau"/>
+                            <constraint firstItem="MEf-L5-xDD" firstAttribute="top" secondItem="GD0-Xg-k25" secondAttribute="top" constant="10" id="ugE-P1-9Yl"/>
+                            <constraint firstAttribute="trailing" secondItem="oLQ-h3-C7S" secondAttribute="trailing" constant="10" id="yKc-qf-P3Y"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="GD0-Xg-k25" secondAttribute="trailing" constant="10" id="V7J-kN-eOd"/>
+                    <constraint firstItem="GD0-Xg-k25" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="buu-yw-5f1"/>
+                    <constraint firstItem="GD0-Xg-k25" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="dbJ-p9-r1J"/>
+                    <constraint firstAttribute="bottom" secondItem="GD0-Xg-k25" secondAttribute="bottom" constant="5" id="f2k-Xf-HtA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellBackgroundView" destination="GD0-Xg-k25" id="Sxu-iH-8bL"/>
+                <outlet property="schoolAddressLabel" destination="nIL-Xq-efN" id="gRp-vL-p1k"/>
+                <outlet property="schoolEmailLabel" destination="tcE-5X-jcJ" id="rU9-u2-fLJ"/>
+                <outlet property="schoolLocationImageView" destination="6xd-pj-QgY" id="Abo-5F-Maq"/>
+                <outlet property="schoolNameLabel" destination="MEf-L5-xDD" id="TFW-Ir-VAg"/>
+                <outlet property="schoolWebsiteLabel" destination="oLQ-h3-C7S" id="cS4-Yf-p0u"/>
+            </connections>
+            <point key="canvasLocation" x="-2081" y="-275"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
