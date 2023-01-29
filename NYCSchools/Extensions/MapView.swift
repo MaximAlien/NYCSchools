@@ -14,7 +14,7 @@ extension MKMapView {
         removeAnnotations(annotations)
     }
     
-    /// Zooms-in to specified coordinate.
+    /// Zooms-in map view to a specified coordinate.
     /// - Parameters:
     ///   - coordinate: The center of the coordinate region.
     ///   - regionRadius: Radius of the region. Defaults to `1500.0` meters.

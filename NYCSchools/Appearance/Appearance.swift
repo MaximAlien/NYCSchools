@@ -9,6 +9,7 @@ import UIKit
 
 final class Appearance {
     
+    /// Applies appearance for light and dark user interface styles.
     static func setup() {
         let lightUserInterfaceStyle = UITraitCollection(userInterfaceStyle: .light)
         let darkUserInterfaceStyle = UITraitCollection(userInterfaceStyle: .dark)

@@ -23,7 +23,15 @@ final class SchoolsViewModel: NSObject {
     
     var offset: UInt = 0
     
-    var isLoadingSchools = false
+    var isLoadingSchools = false {
+        didSet {
+            if isLoadingSchools {
+                tableView?.refreshControl?.beginRefreshing()
+            } else {
+                tableView?.refreshControl?.endRefreshing()
+            }
+        }
+    }
     
     init(_ tableView: UITableView?) {
         super.init()
@@ -41,13 +49,9 @@ final class SchoolsViewModel: NSObject {
     }
     
     @objc func loadSchools() {
-        tableView?.refreshControl?.beginRefreshing()
         isLoadingSchools = true
         
-        let limit: UInt = 10
-        
-        OpenDataService().schools(limit,
-                                  offset: offset,
+        OpenDataService().schools(offset: offset,
                                   completion: { [weak self] result in
             guard let self = self else {
                 return
@@ -71,7 +75,6 @@ final class SchoolsViewModel: NSObject {
                 self.delegate?.didFail(with: error)
             }
             
-            self.tableView?.refreshControl?.endRefreshing()
             self.isLoadingSchools = false
         })
     }
@@ -85,8 +88,9 @@ final class SchoolsViewModel: NSObject {
     
     func updateStyle(for traitCollection: UITraitCollection) {
         // Whenever user interface style changes - reload rows to update style of the map snapshot.
-        let visibleIndexPaths = tableView?.indexPathsForVisibleRows ?? []
-        tableView?.reloadRows(at: visibleIndexPaths, with: .automatic)
+        // Given more time I would improve the process of cells reloading depending on the currently
+        // used style.
+        tableView?.reloadData()
     }
 }
 
@@ -121,7 +125,7 @@ extension SchoolsViewModel: UITableViewDataSource {
         
         let school = schools[indexPath.row]
         
-        cell.schoolLocationImageView.snapshot(for: school)
+        cell.schoolLocationImageView.snapshotMap(for: school)
         
         cell.schoolNameLabel.attributedText = attributedString(with: UIImage(systemName: "graduationcap.fill")!.withTintColor(.white),
                                                                imageBounds: CGRect(x: 0.0, y: -1.5, width: 14.0, height: 12.0),
@@ -153,8 +157,7 @@ extension SchoolsViewModel: UITableViewDataSource {
     func attributedString(with image: UIImage,
                           imageBounds: CGRect,
                           text: String) -> NSAttributedString {
-        let imageAttachment = NSTextAttachment()
-        imageAttachment.image = image
+        let imageAttachment = NSTextAttachment(image: image)
         imageAttachment.bounds = imageBounds
         let imageString = NSAttributedString(attachment: imageAttachment)
         

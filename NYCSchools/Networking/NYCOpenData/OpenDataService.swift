@@ -15,7 +15,7 @@ struct OpenDataService: Service {
         self.dispatchable = dispatcher
     }
     
-    func schools(_ limit: UInt,
+    func schools(_ limit: UInt = 10,
                  offset: UInt,
                  completion: @escaping (Result<[School], Error>) -> Void) {
         let endpoint = OpenDataEndpoint.schools(limit, offset: offset)

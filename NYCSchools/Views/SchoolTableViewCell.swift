@@ -37,12 +37,4 @@ class SchoolTableViewCell: UITableViewCell {
         schoolLocationImageView.layer.borderColor = UIColor.white.cgColor
         schoolLocationImageView.layer.borderWidth = 1.0
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
 }

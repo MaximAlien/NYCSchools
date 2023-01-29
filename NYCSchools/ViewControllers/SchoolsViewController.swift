@@ -65,22 +65,16 @@ extension SchoolsViewController: SchoolsViewModelDelegate {
     }
     
     func didSelect(school: School) {
-        let viewControllers = tabBarController?.viewControllers
-        guard let viewControllers = viewControllers,
-              viewControllers.count == 2,
-              let mapViewController = viewControllers[1] as? MapViewController else {
-                  return
-              }
+        guard let mapViewController = tabBarController?.viewControllers?.compactMap({ $0 as? MapViewController }).first else {
+            return
+        }
         
         tabBarController?.selectedIndex = 1
         mapViewController.mapViewModel.present(school: school)
     }
     
     func didUpdate(schools: [School]) {
-        let viewControllers = tabBarController?.viewControllers
-        guard let viewControllers = viewControllers,
-              viewControllers.count == 2,
-              let mapViewController = viewControllers[1] as? MapViewController,
+        guard let mapViewController = tabBarController?.viewControllers?.compactMap({ $0 as? MapViewController }).first,
               mapViewController.mapViewModel != nil else {
                   return
               }

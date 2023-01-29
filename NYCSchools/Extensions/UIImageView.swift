@@ -9,7 +9,24 @@ import MapKit
 import CoreLocation
 import OSLog
 
+private var AssociatedObjectHandle: UInt8 = 0
+
 extension UIImageView {
+    
+    /// Convenience property that allows to store own version of the `MKMapSnapshotter`.
+    private var mapSnapshotter: MKMapSnapshotter? {
+        get {
+            return objc_getAssociatedObject(self,
+                                            &AssociatedObjectHandle) as? MKMapSnapshotter
+        }
+        
+        set {
+            objc_setAssociatedObject(self,
+                                     &AssociatedObjectHandle,
+                                     newValue,
+                                     objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
     
     /// Returns MapKit's `MapView` region snapshot based on provided coordinate of the `School`.
     /// - Parameters:
@@ -18,13 +35,21 @@ extension UIImageView {
     ///   - cache: Cache that conforms to `Caching` protocol and allows to cache region's snapshot.
     ///   Defaults to cache that is based on `NSCache`.
     ///   - completion: Completion handler that is called whenever snapshot is taken or error is received.
-    func snapshot(for school: School,
-                  regionRadius: CLLocationDistance = 1500.0,
-                  cache: Caching = Cache.shared,
-                  completion: ((Result<UIImage, Error>) -> Void)? = nil) {
+    func snapshotMap(for school: School,
+                     regionRadius: CLLocationDistance = 1500.0,
+                     cache: Caching = Cache.shared,
+                     completion: ((Result<UIImage, Error>) -> Void)? = nil) {
+        // In case if there is already a map snapshotter that attempts to download an image - cancel it.
+        mapSnapshotter?.cancel()
+        
         // If snapshot of the map is already in cache - return it in the completion handler and set it
         // to be used in image view itself.
         if let cachedImage = cache.object(for: school.districtBoroughNumber) as? UIImage {
+            os_log("Cached map snapshot was found for key: %@",
+                   log: OSLog.network,
+                   type: .debug,
+                   school.districtBoroughNumber)
+            
             contentMode = .scaleAspectFit
             image = cachedImage
             completion?(.success(cachedImage))
@@ -49,8 +74,8 @@ extension UIImageView {
         
         mapSnapshotterOptions.region = coordinateRegion
         
-        let snapshotter = MKMapSnapshotter(options: mapSnapshotterOptions)
-        snapshotter.start(completionHandler: { [weak self] snapshot, error in
+        mapSnapshotter = MKMapSnapshotter(options: mapSnapshotterOptions)
+        mapSnapshotter?.start(completionHandler: { [weak self] snapshot, error in
             guard let self = self else {
                 completion?(.failure(.generic(nil)))
                 return

@@ -62,7 +62,9 @@ final class MapViewModel: NSObject {
 extension MapViewModel: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard annotation is MKPointAnnotation else { return nil }
+        guard annotation is MKPointAnnotation else {
+            return nil
+        }
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKPinAnnotationView.reuseIdentifier) as? MKPinAnnotationView
         

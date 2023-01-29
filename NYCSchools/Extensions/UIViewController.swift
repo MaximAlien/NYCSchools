@@ -9,6 +9,10 @@ import UIKit
 
 extension UIViewController {
     
+    /// Presents an alert view controller with provided title and message.
+    /// - Parameters:
+    ///   - title: Title of the alert.
+    ///   - message: Descriptive text that provides additional details about the reason for the alert.
     func presentAlert(with title: String, message: String) {
         let alertController = UIAlertController(title: title,
                                                 message: message,
