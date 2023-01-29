@@ -13,6 +13,10 @@ dispatchers.
 ### Appearance
 
 Application supports different styles for both Light and Dark modes.
+Light             |Dark
+:-------------------------:|:-------------------------:
+![](/images/light_1.png) |  ![](/images/dark_1.png)
+![](/images/light_2.png) |  ![](/images/dark_2.png)
 
 ### Documentation
 
