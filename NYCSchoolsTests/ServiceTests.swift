@@ -8,7 +8,7 @@
 import XCTest
 @testable import NYCSchools
 
-class EnpointMock: Endpoint {
+class EndpointMock: Endpoint {
     
     var url: URL = URL(string: "https://valid_url.com")!
     
@@ -70,7 +70,7 @@ class ServiceTests: XCTestCase {
     func testService() {
         let dispatcherMock = DispatcherMock()
         let serviceMock = ServiceMock(dispatcherMock)
-        let endpointMock = EnpointMock()
+        let endpointMock = EndpointMock()
         
         let expectation = expectation(description: "Expectation.")
         serviceMock.dispatch(endpointMock) { result in
