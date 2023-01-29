@@ -102,7 +102,7 @@
                 <outlet property="schoolEmailLabel" destination="tcE-5X-jcJ" id="rU9-u2-fLJ"/>
                 <outlet property="schoolLocationImageView" destination="6xd-pj-QgY" id="Abo-5F-Maq"/>
                 <outlet property="schoolNameLabel" destination="MEf-L5-xDD" id="TFW-Ir-VAg"/>
-                <outlet property="schoolWebsiteLabel" destination="oLQ-h3-C7S" id="cS4-Yf-p0u"/>
+                <outlet property="schoolWebsiteLabel" destination="oLQ-h3-C7S" id="mPF-v3-Ina"/>
             </connections>
             <point key="canvasLocation" x="-2081" y="-275"/>
         </tableViewCell>

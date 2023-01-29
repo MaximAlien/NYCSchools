@@ -31,12 +31,17 @@ class SchoolsViewController: UIViewController {
         schoolsViewModel.loadSchools()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if previousTraitCollection?.userInterfaceStyle == traitCollection.userInterfaceStyle { return }
+        
+        schoolsViewModel.updateStyle(for: traitCollection)
+    }
+    
     // MARK: - Setting-up methods
     
     func setupTableView() {
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.separatorStyle = .none
         view.addSubview(tableView)
         
         let tableViewConstraints = [
@@ -47,11 +52,6 @@ class SchoolsViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(tableViewConstraints)
-        
-        tableView.register(UINib(nibName: SchoolTableViewCell.reuseIdentifier, bundle: nil),
-                           forCellReuseIdentifier: SchoolTableViewCell.reuseIdentifier)
-        
-        tableView.refreshControl = UIRefreshControl()
     }
 }
 
@@ -60,15 +60,8 @@ class SchoolsViewController: UIViewController {
 extension SchoolsViewController: SchoolsViewModelDelegate {
     
     func didFail(with error: Error) {
-        let alertController = UIAlertController(title: "NYCSchools".localized,
-                                                message: "Error occured: \(error.localizedDescription)",
-                                                preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "OK".localized,
-                                   style: .default)
-        
-        alertController.addAction(action)
-        present(alertController, animated: true)
+        presentAlert(with: "NYCSchools".localized,
+                     message: "Error occured: \(error.localizedDescription)")
     }
     
     func didSelect(school: School) {

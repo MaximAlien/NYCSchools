@@ -19,7 +19,7 @@ class SchoolTableViewCell: UITableViewCell {
     
     @IBOutlet weak var schoolEmailLabel: SchoolEmailLabel!
     
-    @IBOutlet weak var schoolWebsiteLabel: UILabel!
+    @IBOutlet weak var schoolWebsiteLabel: SchoolWebsiteLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,8 +32,10 @@ class SchoolTableViewCell: UITableViewCell {
         cellBackgroundView.layer.cornerRadius = cornerRadius
         
         schoolLocationImageView.clipsToBounds = true
-        schoolLocationImageView.layer.cornerRadius = cornerRadius
         schoolLocationImageView.contentMode = .scaleAspectFill
+        schoolLocationImageView.layer.cornerRadius = cornerRadius
+        schoolLocationImageView.layer.borderColor = UIColor.white.cgColor
+        schoolLocationImageView.layer.borderWidth = 1.0
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -7,10 +7,12 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     
     let schoolsViewController = SchoolsViewController()
     let mapViewController = MapViewController()
+    
+    // MARK: - UIViewController lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,8 @@ class TabBarController: UITabBarController {
         
         setupTabBarItems()
     }
+    
+    // MARK: - Setting-up methods
     
     func setupTabBarItems() {
         guard let tabBarItems = tabBar.items else {

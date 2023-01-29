@@ -21,8 +21,6 @@ final class SchoolsViewModel: NSObject {
         }
     }
     
-    let openDataService = OpenDataService()
-    
     var offset: UInt = 0
     
     var isLoadingSchools = false
@@ -33,9 +31,13 @@ final class SchoolsViewModel: NSObject {
         self.tableView = tableView
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
+        self.tableView?.register(UINib(nibName: SchoolTableViewCell.reuseIdentifier, bundle: nil),
+                                 forCellReuseIdentifier: SchoolTableViewCell.reuseIdentifier)
+        self.tableView?.refreshControl = UIRefreshControl()
         self.tableView?.refreshControl?.addTarget(self,
                                                   action: #selector(resetSearchResults),
                                                   for: .valueChanged)
+        self.tableView?.separatorStyle = .none
     }
     
     @objc func loadSchools() {
@@ -44,10 +46,12 @@ final class SchoolsViewModel: NSObject {
         
         let limit: UInt = 10
         
-        openDataService.schools(limit,
-                                offset: offset,
-                                completion: { [weak self] result in
-            guard let self = self else { return }
+        OpenDataService().schools(limit,
+                                  offset: offset,
+                                  completion: { [weak self] result in
+            guard let self = self else {
+                return
+            }
             
             switch result {
             case .success(let schools):
@@ -78,6 +82,12 @@ final class SchoolsViewModel: NSObject {
         tableView?.reloadData()
         loadSchools()
     }
+    
+    func updateStyle(for traitCollection: UITraitCollection) {
+        // Whenever user interface style changes - reload rows to update style of the map snapshot.
+        let visibleIndexPaths = tableView?.indexPathsForVisibleRows ?? []
+        tableView?.reloadRows(at: visibleIndexPaths, with: .automatic)
+    }
 }
 
 // MARK: - UITableViewDelegate methods
@@ -106,21 +116,16 @@ extension SchoolsViewModel: UITableViewDelegate {
 
 extension SchoolsViewModel: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as SchoolTableViewCell
         
         let school = schools[indexPath.row]
+        
+        cell.schoolLocationImageView.snapshot(for: school)
+        
         cell.schoolNameLabel.attributedText = attributedString(with: UIImage(systemName: "graduationcap.fill")!.withTintColor(.white),
                                                                imageBounds: CGRect(x: 0.0, y: -1.5, width: 14.0, height: 12.0),
                                                                text: school.name ?? "N/A")
-        
-        if let coordinate = school.location?.coordinate {
-            cell.schoolLocationImageView.snapshot(for: coordinate)
-        }
         
         cell.schoolAddressLabel.attributedText = attributedString(with: UIImage(systemName: "building.2.fill")!.withTintColor(.white),
                                                                   imageBounds: CGRect(x: 0.0, y: -1.0, width: 12.0, height: 12.0),

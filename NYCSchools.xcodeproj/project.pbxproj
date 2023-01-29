@@ -13,6 +13,12 @@
 		6D3B36992984AB560055975B /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B36982984AB560055975B /* Cache.swift */; };
 		6D3B369B2984AE880055975B /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B369A2984AE880055975B /* CacheTests.swift */; };
 		6D3B369D2984B4B10055975B /* SchoolsViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B369C2984B4B10055975B /* SchoolsViewModelDelegate.swift */; };
+		6D6659F62985FCA30050682C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6D6659F52985FCA30050682C /* README.md */; };
+		6D6659F82986434F0050682C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6659F72986434F0050682C /* MapView.swift */; };
+		6D6659FA298644050050682C /* MapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6659F9298644050050682C /* MapViewTests.swift */; };
+		6D6659FC298646C30050682C /* MapViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6659FB298646C30050682C /* MapViewModelDelegate.swift */; };
+		6D6659FE298647A10050682C /* MKPinAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6659FD298647A10050682C /* MKPinAnnotationView.swift */; };
+		6D665A0029864F3D0050682C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6659FF29864F3D0050682C /* UIViewController.swift */; };
 		6D90121C29831E5C006765A2 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90121A29831E5C006765A2 /* SchoolTableViewCell.swift */; };
 		6D90121D29831E5C006765A2 /* SchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D90121B29831E5C006765A2 /* SchoolTableViewCell.xib */; };
 		6D90121F29831E70006765A2 /* SchoolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D90121E29831E70006765A2 /* SchoolsViewModel.swift */; };
@@ -65,6 +71,12 @@
 		6D3B36982984AB560055975B /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		6D3B369A2984AE880055975B /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		6D3B369C2984B4B10055975B /* SchoolsViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewModelDelegate.swift; sourceTree = "<group>"; };
+		6D6659F52985FCA30050682C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		6D6659F72986434F0050682C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		6D6659F9298644050050682C /* MapViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewTests.swift; sourceTree = "<group>"; };
+		6D6659FB298646C30050682C /* MapViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelDelegate.swift; sourceTree = "<group>"; };
+		6D6659FD298647A10050682C /* MKPinAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPinAnnotationView.swift; sourceTree = "<group>"; };
+		6D6659FF29864F3D0050682C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		6D90121A29831E5C006765A2 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		6D90121B29831E5C006765A2 /* SchoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolTableViewCell.xib; sourceTree = "<group>"; };
 		6D90121E29831E70006765A2 /* SchoolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +154,7 @@
 		6DC766542980D3CC0088171A /* NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				6D6659F52985FCA30050682C /* README.md */,
 				6DC766A22980F0CC0088171A /* Appearance */,
 				6DC7669B2980EF7F0088171A /* Extensions */,
 				6DC766892980D58A0088171A /* Views */,
@@ -164,6 +177,7 @@
 				6DC766A52980F6680088171A /* ServiceTests.swift */,
 				6DC766AB298100140088171A /* DecoderTests.swift */,
 				6D3B369A2984AE880055975B /* CacheTests.swift */,
+				6D6659F9298644050050682C /* MapViewTests.swift */,
 				6DC766A72980FE000088171A /* Schools.json */,
 				6DC766A92980FE190088171A /* SchoolResults.json */,
 			);
@@ -207,6 +221,7 @@
 				6D90121E29831E70006765A2 /* SchoolsViewModel.swift */,
 				6D3B369C2984B4B10055975B /* SchoolsViewModelDelegate.swift */,
 				6D3B36962984A5A00055975B /* MapViewModel.swift */,
+				6D6659FB298646C30050682C /* MapViewModelDelegate.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -245,6 +260,9 @@
 				6DC7669C2980EF960088171A /* URLSession.swift */,
 				6DC7669E2980F07E0088171A /* OSLog.swift */,
 				6DC766A02980F0BF0088171A /* UIColor.swift */,
+				6D6659F72986434F0050682C /* MapView.swift */,
+				6D6659FD298647A10050682C /* MKPinAnnotationView.swift */,
+				6D6659FF29864F3D0050682C /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,6 +358,7 @@
 			files = (
 				6DC766622980D3D10088171A /* LaunchScreen.storyboard in Resources */,
 				6DC7665F2980D3D10088171A /* Assets.xcassets in Resources */,
+				6D6659F62985FCA30050682C /* README.md in Resources */,
 				6D90121D29831E5C006765A2 /* SchoolTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,7 +379,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D6659FC298646C30050682C /* MapViewModelDelegate.swift in Sources */,
 				6D90122229831E9F006765A2 /* SchoolsViewController.swift in Sources */,
+				6D6659F82986434F0050682C /* MapView.swift in Sources */,
 				6DC766912980DB960088171A /* Endpoint.swift in Sources */,
 				6DC766A12980F0BF0088171A /* UIColor.swift in Sources */,
 				6DC7669D2980EF960088171A /* URLSession.swift in Sources */,
@@ -379,8 +400,10 @@
 				6D3B36992984AB560055975B /* Cache.swift in Sources */,
 				6D90123C298347D1006765A2 /* UIImageView.swift in Sources */,
 				6D3B36972984A5A10055975B /* MapViewModel.swift in Sources */,
+				6D6659FE298647A10050682C /* MKPinAnnotationView.swift in Sources */,
 				6D90121C29831E5C006765A2 /* SchoolTableViewCell.swift in Sources */,
 				6D90124529835864006765A2 /* SchoolNameLabel.swift in Sources */,
+				6D665A0029864F3D0050682C /* UIViewController.swift in Sources */,
 				6D90122A29831EE8006765A2 /* MapViewController.swift in Sources */,
 				6DC7669A2980E8760088171A /* Service.swift in Sources */,
 				6D3B369D2984B4B10055975B /* SchoolsViewModelDelegate.swift in Sources */,
@@ -399,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DC766AC298100140088171A /* DecoderTests.swift in Sources */,
+				6D6659FA298644050050682C /* MapViewTests.swift in Sources */,
 				6DC766A62980F6690088171A /* ServiceTests.swift in Sources */,
 				6D3B369B2984AE880055975B /* CacheTests.swift in Sources */,
 			);

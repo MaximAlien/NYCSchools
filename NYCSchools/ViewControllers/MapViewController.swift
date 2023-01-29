@@ -22,7 +22,10 @@ class MapViewController: UIViewController {
         setupMapView()
         
         mapViewModel = MapViewModel(mapView: mapView)
+        mapViewModel.delegate = self
     }
+    
+    // MARK: - Setting-up methods
     
     func setupMapView() {
         mapView = MKMapView()
@@ -37,5 +40,15 @@ class MapViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(mapViewConstraints)
+    }
+}
+
+// MARK: - MapViewController methods
+
+extension MapViewController: MapViewModelDelegate {
+    
+    func didFail(with error: Error) {
+        presentAlert(with: "NYCSchools".localized,
+                     message: "Error occured: \(error.localizedDescription)")
     }
 }

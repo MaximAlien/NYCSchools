@@ -12,7 +12,7 @@ final class MapViewModel: NSObject {
     
     weak var mapView: MKMapView? = nil
     
-    let openDataService = OpenDataService()
+    weak var delegate: MapViewModelDelegate? = nil
     
     init(mapView: MKMapView) {
         super.init()
@@ -22,52 +22,38 @@ final class MapViewModel: NSObject {
     }
     
     func present(school: School) {
-        removeAllAnnotations()
+        guard let schoolAnnotation = school.annotation,
+              let mapView = mapView else {
+                  return
+              }
         
-        if let schoolAnnotation = school.annotation {
-            zoomInMapView(to: schoolAnnotation.coordinate)
-            mapView?.addAnnotation(schoolAnnotation)
+        mapView.removeAllAnnotations()
+        mapView.zoomIn(to: schoolAnnotation.coordinate)
+        mapView.addAnnotation(schoolAnnotation)
+        
+        OpenDataService().schoolResults(school.districtBoroughNumber) { [weak self] result in
+            guard let self = self else {
+                return
+            }
             
-            openDataService.schoolResults(school.districtBoroughNumber) { [weak self] result in
-                guard let self = self else { return }
-                
-                switch result {
-                case .success(let schoolResults):
-                    if let schoolResult = schoolResults.first,
-                       let criticalReadingAverageScore = schoolResult.criticalReadingAverageScore,
-                       let writingAverageScore = schoolResult.writingAverageScore,
-                       let mathematicsAverageScore = schoolResult.mathematicsAverageScore {
-                        let subtitle = "Reading: \(criticalReadingAverageScore), Writing: \(writingAverageScore), Math: \(mathematicsAverageScore)"
-                        schoolAnnotation.subtitle = subtitle
-                        self.mapView?.selectAnnotation(schoolAnnotation, animated: true)
-                    }
-                case .failure(_):
-                    break
-                }
+            switch result {
+            case .success(let schoolResults):
+                schoolAnnotation.subtitle = schoolResults.first?.annotationSubtitle
+                mapView.selectAnnotation(schoolAnnotation, animated: true)
+            case .failure(let error):
+                self.delegate?.didFail(with: error)
             }
         }
     }
     
     func update(schools: [School]) {
-        removeAllAnnotations()
-        mapView?.showAnnotations(schools.compactMap({ $0.annotation }),
-                                 animated: true)
-    }
-    
-    func zoomInMapView(to coordinate: CLLocationCoordinate2D) {
-        let regionRadius: CLLocationDistance = 1500 // meters
-        let coordinateRegion = MKCoordinateRegion(center: coordinate,
-                                                  latitudinalMeters: regionRadius,
-                                                  longitudinalMeters: regionRadius)
-        mapView?.setRegion(coordinateRegion, animated: true)
-    }
-    
-    func removeAllAnnotations() {
-        guard let annotations = mapView?.annotations else {
+        guard let mapView = mapView else {
             return
         }
         
-        mapView?.removeAnnotations(annotations)
+        mapView.removeAllAnnotations()
+        mapView.showAnnotations(schools.compactMap({ $0.annotation }),
+                                animated: true)
     }
 }
 
@@ -78,13 +64,13 @@ extension MapViewModel: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil }
         
-        let identifier = "annotation"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKPinAnnotationView.reuseIdentifier) as? MKPinAnnotationView
         
         if let annotationView = annotationView {
             annotationView.annotation = annotation
         } else {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKPinAnnotationView(annotation: annotation,
+                                                 reuseIdentifier: MKPinAnnotationView.reuseIdentifier)
             annotationView?.canShowCallout = true
         }
         
