@@ -61,3 +61,20 @@ struct SchoolResults: Decodable {
         }
     }
 }
+
+// MARK: - SchoolResults extension
+
+extension SchoolResults {
+    
+    /// Provides string with SAT (Scholastic Assessment Test) scores that is used in `MKPointAnnotation`.
+    var annotationSubtitle: String? {
+        guard let criticalReadingAverageScore = criticalReadingAverageScore,
+              let writingAverageScore = writingAverageScore,
+              let mathematicsAverageScore = mathematicsAverageScore else {
+                  return nil
+              }
+        
+        // Given more time I would implement flexible functionality that allows to localize such strings.
+        return "Reading: \(criticalReadingAverageScore), Writing: \(writingAverageScore), Math: \(mathematicsAverageScore)"
+    }
+}
